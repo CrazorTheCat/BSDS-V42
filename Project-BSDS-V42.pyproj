@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5b8bd867-a34f-4479-95a2-5c92fbe8970d}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>Core.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ByteStream.py" />
+    <Compile Include="Classes\ByteStreamHelper.py" />
+    <Compile Include="Classes\ChecksumEncoder.py" />
+    <Compile Include="Classes\ChronosTextEntry.py" />
+    <Compile Include="Classes\ClientsManager.py" />
+    <Compile Include="Classes\Commands\Client\LogicPurchaseOfferCommand.py" />
+    <Compile Include="Classes\Commands\LogicCommand.py" />
+    <Compile Include="Classes\Commands\LogicServerCommand.py" />
+    <Compile Include="Classes\Commands\Server\LogicChangeAvatarNameCommand.py" />
+    <Compile Include="Classes\Connection.py" />
+    <Compile Include="Classes\CPPDefs.py" />
+    <Compile Include="Classes\Debugger.py" />
+    <Compile Include="Classes\Files\Classes\Cards.py" />
+    <Compile Include="Classes\Files\Classes\Characters.py" />
+    <Compile Include="Classes\Files\Classes\Locations.py" />
+    <Compile Include="Classes\Files\Classes\Pins.py" />
+    <Compile Include="Classes\Files\Classes\PlayerThumbnails.py" />
+    <Compile Include="Classes\Files\Classes\Regions.py" />
+    <Compile Include="Classes\Files\Classes\Skins.py" />
+    <Compile Include="Classes\Instances\Classes\Alliance.py" />
+    <Compile Include="Classes\Instances\Classes\Player.py" />
+    <Compile Include="Classes\Instances\InstanceHandler.py" />
+    <Compile Include="Classes\Logic\LogicBattlePlayerMap.py" />
+    <Compile Include="Classes\Logic\LogicCommandManager.py" />
+    <Compile Include="Classes\Logic\LogicLaserMessageFactory.py" />
+    <Compile Include="Classes\Logic\LogicLong.py" />
+    <Compile Include="Classes\Logic\LogicStringUtil.py" />
+    <Compile Include="Classes\MessageManager.py" />
+    <Compile Include="Classes\Messaging.py" />
+    <Compile Include="Classes\Packets\Client\Authentification\ClientHelloMessage.py" />
+    <Compile Include="Classes\Packets\Client\Authentification\LoginMessage.py" />
+    <Compile Include="Classes\Packets\Client\Battle\AskForBattleEndMessage.py" />
+    <Compile Include="Classes\Packets\Client\Battle\SinglePlayerMatchRequestMessage.py" />
+    <Compile Include="Classes\Packets\Client\Home\ChangeAvatarNameMessage.py" />
+    <Compile Include="Classes\Packets\Client\Home\EndClientTurnMessage.py" />
+    <Compile Include="Classes\Packets\Client\Home\GoHomeFromOfflinePractiseMessage.py" />
+    <Compile Include="Classes\Packets\Client\Home\GoHomeMessage.py" />
+    <Compile Include="Classes\Packets\Client\Socket\KeepAliveMessage.py" />
+    <Compile Include="Classes\Packets\PiranhaMessage.py" />
+    <Compile Include="Classes\Packets\Server\Authentification\LoginFailedMessage.py" />
+    <Compile Include="Classes\Packets\Server\Authentification\LoginOkMessage.py" />
+    <Compile Include="Classes\Packets\Server\Authentification\OutOfSyncMessage.py" />
+    <Compile Include="Classes\Packets\Server\Authentification\ServerHelloMessage.py" />
+    <Compile Include="Classes\Packets\Server\Battle\BattleEndMessage.py" />
+    <Compile Include="Classes\Packets\Server\Home\AvailableServerCommandMessage.py" />
+    <Compile Include="Classes\Packets\Server\Home\LobbyInfoMessage.py" />
+    <Compile Include="Classes\Packets\Server\Home\OwnHomeDataMessage.py" />
+    <Compile Include="Classes\Packets\Server\Socket\KeepAliveServerMessage.py" />
+    <Compile Include="Classes\ServerConnection.py" />
+    <Compile Include="Classes\Utility.py" />
+    <Compile Include="Configuration.py" />
+    <Compile Include="ContentUpdater\Server.py" />
+    <Compile Include="ContentUpdater\Updater.py" />
+    <Compile Include="Core.py" />
+    <Compile Include="Database\DatabaseHandler.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="ContentUpdater\Content\assets\csv_logic\characters.csv" />
+    <Content Include="ContentUpdater\Content\assets\fingerprint.json" />
+    <Content Include="ContentUpdater\lastversion.txt" />
+    <Content Include="ContentUpdater\readme.txt" />
+    <Content Include="ContentUpdater\Update\okwhy.txt" />
+    <Content Include="Database\Files\player.sqlite" />
+    <Content Include="LICENSE" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="Classes\Commands" />
+    <Folder Include="Classes\Commands\Client" />
+    <Folder Include="Classes\Commands\Server" />
+    <Folder Include="Classes\Files\" />
+    <Folder Include="Classes\Files\Classes" />
+    <Folder Include="Classes\Instances" />
+    <Folder Include="Classes\Instances\Classes" />
+    <Folder Include="Classes\Logic" />
+    <Folder Include="Classes\Packets" />
+    <Folder Include="Classes\Packets\Client\" />
+    <Folder Include="Classes\Packets\Client\Authentification" />
+    <Folder Include="Classes\Packets\Client\Battle" />
+    <Folder Include="Classes\Packets\Client\Home" />
+    <Folder Include="Classes\Packets\Client\Socket" />
+    <Folder Include="Classes\Packets\Server\" />
+    <Folder Include="Classes\Packets\Server\Authentification" />
+    <Folder Include="Classes\Packets\Server\Battle" />
+    <Folder Include="Classes\Packets\Server\Home" />
+    <Folder Include="Classes\Packets\Server\Socket" />
+    <Folder Include="ContentUpdater" />
+    <Folder Include="ContentUpdater\Content\" />
+    <Folder Include="ContentUpdater\Content\assets\" />
+    <Folder Include="ContentUpdater\Content\assets\csv_logic\" />
+    <Folder Include="ContentUpdater\Update" />
+    <Folder Include="Database" />
+    <Folder Include="Database\Files\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
