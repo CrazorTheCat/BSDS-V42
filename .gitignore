@@ -5,3 +5,4 @@
 /.vs
 **__pycache__
 /HexDumpV42
+/player.sqlite

@@ -17,8 +17,8 @@ class LoginOkMessage(PiranhaMessage):
         self.writeString(player.Token)
         self.writeString()
         self.writeString()
-        self.writeInt(41)
-        self.writeInt(148)
+        self.writeInt(42)
+        self.writeInt(333)
         self.writeInt(1)
         self.writeString("dev")
         self.writeInt(0)
@@ -48,7 +48,24 @@ class LoginOkMessage(PiranhaMessage):
         self.writeString()
         self.writeString('https://play.google.com/store/apps/details?id=com.supercell.brawlstars')
         self.writeString()
-        self.writeBoolean(True)
+        self.writeBoolean(False)
+
+        self.writeBoolean(False)
+        if False:
+            self.writeString()
+
+        self.writeBoolean(False)
+        if False:
+            self.writeString()
+
+        self.writeBoolean(False)
+        if False:
+            self.writeString()
+
+        self.writeBoolean(False)
+        if False:
+            self.writeString()
+
 
     def decode(self):
         fields = {}
@@ -94,6 +111,26 @@ class LoginOkMessage(PiranhaMessage):
         fields["UpdateURL"] = self.readString()
         fields["YoozooPayNotifyUrl"] = self.readString()
         fields["UnbotifyEnabled"] = self.readBoolean()
+
+        Unknown1 = self.readBoolean()
+        fields["Unknown1"] = Unknown1
+        if Unknown1:
+            fields["Unknown2"] = self.readString()
+
+        Unknown3 = self.readBoolean()
+        fields["Unknown3"] = Unknown1
+        if Unknown3:
+            fields["Unknown4"] = self.readString()
+
+        Unknown5 = self.readBoolean()
+        fields["Unknown5"] = Unknown1
+        if Unknown5:
+            fields["Unknown6"] = self.readString()
+
+        Unknown7 = self.readBoolean()
+        fields["Unknown7"] = Unknown1
+        if Unknown7:
+            fields["Unknown8"] = self.readString()
         super().decode(fields)
         return fields
 

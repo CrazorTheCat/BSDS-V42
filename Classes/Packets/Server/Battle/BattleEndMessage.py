@@ -73,7 +73,7 @@ class BattleEndMessage(PiranhaMessage):
             self.writeVInt(43000000)
             self.writeVInt(46000000)
             if heroEntry["IsPlayer"]:
-                self.writeBoolean(True, 1)
+                self.writeBoolean(True)
                 self.writeVLong(5, 4181497)
                 self.writeString('Orange eSPORT')
                 self.writeDataReference(8, 16)
@@ -95,8 +95,8 @@ class BattleEndMessage(PiranhaMessage):
         self.writeVInt(999999)
 
         self.writeDataReference(28, 0)
-        self.writeBoolean(False, 1)
-        self.writeBoolean(False, 1)
+        self.writeBoolean(False)
+        self.writeBoolean(False)
         self.writeVInt(0)
         self.writeVInt(0)
         self.writeBoolean(False)

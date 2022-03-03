@@ -101,7 +101,7 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeBoolean(False)
         self.writeVInt(49)
         self.writeInt(0)
-        self.writeString("Unlock all skins")
+        self.writeString("Update Database")
         self.writeBoolean(False)
         self.writeString()
         self.writeVInt(-1)
@@ -266,7 +266,7 @@ class OwnHomeDataMessage(PiranhaMessage):
 
         self.writeVInt(0) # ReleaseEntry
 
-        self.writeVInt(23)  # IntValueEntry
+        self.writeVInt(22)  # IntValueEntry
 
         self.writeLong(10008, 501)
         self.writeLong(65, 2)
@@ -275,7 +275,7 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeLong(66, 1)
         self.writeLong(61, 36270)  # SupportDisabled State | if 36218 < state its true
         self.writeLong(47, 41381)
-        self.writeLong(29, 0)  # Skin Group Active For Campaign
+        #self.writeLong(29, 0)  # Skin Group Active For Campaign
         self.writeLong(48, 41381)
         self.writeLong(50, 0)  # Coming up quests placeholder
         self.writeLong(1100, 500)
@@ -409,6 +409,8 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeVInt(0)  # NpcWinCount
         self.writeVInt(0)  # NpcLoseCount
         self.writeVInt(2)  # TutorialState | shouldGoToFirstTutorialBattle = State == 0
+        self.writeVInt(0)
+        self.writeVInt(0)
         self.writeVInt(0)
 
     def decode(self):

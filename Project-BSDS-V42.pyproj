@@ -78,6 +78,14 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
+    <Content Include="Classes\Files\assets\csv_logic\cards.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\characters.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\emotes.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\locations.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\player_thumbnails.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\regions.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\skins.csv" />
+    <Content Include="Classes\Files\assets\csv_logic\skin_confs.csv" />
     <Content Include="ContentUpdater\Content\assets\csv_logic\characters.csv" />
     <Content Include="ContentUpdater\Content\assets\fingerprint.json" />
     <Content Include="ContentUpdater\lastversion.txt" />
@@ -93,6 +101,8 @@
     <Folder Include="Classes\Commands\Client" />
     <Folder Include="Classes\Commands\Server" />
     <Folder Include="Classes\Files\" />
+    <Folder Include="Classes\Files\assets\" />
+    <Folder Include="Classes\Files\assets\csv_logic\" />
     <Folder Include="Classes\Files\Classes" />
     <Folder Include="Classes\Instances" />
     <Folder Include="Classes\Instances\Classes" />
