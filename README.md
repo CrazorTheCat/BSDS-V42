@@ -15,6 +15,6 @@ Server ZIP: https://github.com/CrazorTheCat/BSDS-V42/archive/refs/heads/master.z
 5. click on the run button
 6. now open the game and play
 
-## Change the ip address and port (if needed) in libprojectbsds.config.so located in the lib folder ##
+## Change the ip address and port (if needed) in libprojectbsds.config.so located in the lib folder of the apk ##
 
 ![Screenshot_20220302-180739_BSDS_V42](https://user-images.githubusercontent.com/52799759/156474426-399ea814-9727-4a49-a1f8-2f95e027309c.png)
