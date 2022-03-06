@@ -6,6 +6,7 @@ from Classes.Packets.Client.Home.EndClientTurnMessage import EndClientTurnMessag
 from Classes.Packets.Client.Home.GoHomeFromOfflinePractiseMessage import GoHomeFromOfflinePractiseMessage
 from Classes.Packets.Client.Home.GoHomeMessage import GoHomeMessage
 from Classes.Packets.Client.Socket.KeepAliveMessage import KeepAliveMessage
+from Classes.Packets.Client.Home.GetPlayerProfileMessage import GetPlayerProfileMessage
 from Classes.Packets.Server.Authentification.LoginFailedMessage import LoginFailedMessage
 from Classes.Packets.Server.Authentification.LoginOkMessage import LoginOkMessage
 from Classes.Packets.Server.Authentification.OutOfSyncMessage import OutOfSyncMessage
@@ -15,6 +16,7 @@ from Classes.Packets.Server.Home.AvailableServerCommandMessage import AvailableS
 from Classes.Packets.Server.Home.LobbyInfoMessage import LobbyInfoMessage
 from Classes.Packets.Server.Home.OwnHomeDataMessage import OwnHomeDataMessage
 from Classes.Packets.Server.Socket.KeepAliveServerMessage import KeepAliveServerMessage
+from Classes.Packets.Server.Home.PlayerProfileMessage import PlayerProfileMessage
 
 
 class LogicLaserMessageFactory:
@@ -95,7 +97,7 @@ class LogicLaserMessageFactory:
         14108: 'GoHomeFromSpectateMessage',
         14109: GoHomeFromOfflinePractiseMessage,
         14110: AskForBattleEndMessage,
-        14113: 'GetPlayerProfileMessage',
+        14113: GetPlayerProfileMessage,
         14114: 'GetBattleLogMessage',
         14115: 'BattleLogViewReplayMessage',
         14116: 'ViewReplayByStringMessage',
@@ -254,6 +256,7 @@ class LogicLaserMessageFactory:
         22157: 'RankedMatchHeroDataUpdatedMessage',
         22158: 'RankedMatchFinalPreparationStartedMessage',
         22159: 'RankedMatchTerminatedMessage',
+        22160: 'AllianceLeagueRankingListMessage',
         22202: 'MapPreviewMessage',
         22377: 'GoogleServiceAccountBoundMessage',
         22687: 'GamecenterAccountAlreadyBoundMessage',
@@ -274,7 +277,7 @@ class LogicLaserMessageFactory:
         24109: 'VisionUpdateMessage',
         24111: AvailableServerCommandMessage,
         24112: 'UdpConnectionInfoMessage',
-        24113: 'PlayerProfileMessage',
+        24113: PlayerProfileMessage,
         24114: 'HomeBattleReplayDataMessage',
         24115: 'ServerErrorMessage',
         24116: 'HomeBattleReplayFailedMessage',

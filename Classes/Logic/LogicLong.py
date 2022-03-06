@@ -29,21 +29,19 @@ class LogicLong:
         return False
 
     @staticmethod
-    def getHigherInt(longlong):
+    def getHigherInt(longlong: int):
         return longlong >> 32
 
-    @overload
     def getHigherInt(self):
         return self.high
 
     @staticmethod
-    def getLowerInt(longlong):
+    def getLowerInt(longlong: int):
         result = longlong & 0x7FFFFFFF
         if longlong < 0:
             return longlong | 0x80000000
         return result
 
-    @overload
     def getLowerInt(self):
         return self.low
 

@@ -22,7 +22,8 @@
     <Compile Include="Classes\ByteStream.py" />
     <Compile Include="Classes\ByteStreamHelper.py" />
     <Compile Include="Classes\ChecksumEncoder.py" />
-    <Compile Include="Classes\ChronosTextEntry.py" />
+    <Compile Include="Classes\Packets\Server\Home\PlayerProfileMessage.py" />
+    <Compile Include="Classes\Wrappers\ChronosTextEntry.py" />
     <Compile Include="Classes\ClientsManager.py" />
     <Compile Include="Classes\Commands\Client\LogicPurchaseOfferCommand.py" />
     <Compile Include="Classes\Commands\LogicCommand.py" />
@@ -55,6 +56,7 @@
     <Compile Include="Classes\Packets\Client\Home\ChangeAvatarNameMessage.py" />
     <Compile Include="Classes\Packets\Client\Home\EndClientTurnMessage.py" />
     <Compile Include="Classes\Packets\Client\Home\GoHomeFromOfflinePractiseMessage.py" />
+    <Compile Include="Classes\Packets\Client\Home\GetPlayerProfileMessage.py" />
     <Compile Include="Classes\Packets\Client\Home\GoHomeMessage.py" />
     <Compile Include="Classes\Packets\Client\Socket\KeepAliveMessage.py" />
     <Compile Include="Classes\Packets\PiranhaMessage.py" />
@@ -69,6 +71,9 @@
     <Compile Include="Classes\Packets\Server\Socket\KeepAliveServerMessage.py" />
     <Compile Include="Classes\ServerConnection.py" />
     <Compile Include="Classes\Utility.py" />
+    <Compile Include="Classes\Wrappers\BattleLogPlayerEntry.py" />
+    <Compile Include="Classes\Wrappers\PlayerProfile.py" />
+    <Compile Include="Classes\Wrappers\PlayerDisplayData.py" />
     <Compile Include="Configuration.py" />
     <Compile Include="ContentUpdater\Server.py" />
     <Compile Include="ContentUpdater\Updater.py" />
@@ -107,6 +112,7 @@
     <Folder Include="Classes\Instances" />
     <Folder Include="Classes\Instances\Classes" />
     <Folder Include="Classes\Logic" />
+    <Folder Include="Classes\Wrappers\" />
     <Folder Include="Classes\Packets" />
     <Folder Include="Classes\Packets\Client\" />
     <Folder Include="Classes\Packets\Client\Authentification" />

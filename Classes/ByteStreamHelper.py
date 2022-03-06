@@ -61,15 +61,15 @@ class ByteStreamHelper:
     def encodeLogicLong(self, logicLong):
         if logicLong is None:
             logicLong = LogicLong(0, 0)
-        self.writeVInt(logicLong.getHigherInt(self))
-        self.writeVInt(logicLong.getLowerInt(self))
+        self.writeVInt(logicLong.getHigherInt())
+        self.writeVInt(logicLong.getLowerInt())
 
     def encodeLogicLongList(self, logicLongList):
         length = len(logicLongList)
         self.writeVInt(self, length)
         for logicLong in logicLongList:
-            self.writeVInt(logicLong.getHigherInt(self))
-            self.writeVInt(logicLong.getLowerInt(self))
+            self.writeVInt(logicLong.getHigherInt())
+            self.writeVInt(logicLong.getLowerInt())
 
     def readBattlePlayerMap(self, fields):
         if self.readBoolean() & 1 != 0:

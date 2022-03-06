@@ -93,7 +93,7 @@ class Player:
         pass
 
     def getDataTemplate(self, highid, lowid, token):
-        if highid == 0 or lowid == 0:
+        if highid == 0 and lowid == 0:
             self.ID[0] = int(''.join([str(random.randint(0, 9)) for _ in range(1)]))
             self.ID[1] = int(''.join([str(random.randint(0, 9)) for _ in range(8)]))
             self.Token = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(40))
