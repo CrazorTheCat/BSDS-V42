@@ -2,7 +2,11 @@ Discord link : https://discord.gg/mt4dUxXryh
 
 ANDROID : https://www.mediafire.com/file/2va7flx8c9n9jo5/com.projectbsds.v42333.apk/file
 
-ANDROID (GOOGLE DRIVE) : https://drive.google.com/file/d/1jMyY93fDpiM3UV9yscBs0AMbRwm5uvaY/view?usp=sharing
+ANDROID 1 (GOOGLE DRIVE) : https://drive.google.com/file/d/1jMyY93fDpiM3UV9yscBs0AMbRwm5uvaY/view?usp=sharing
+
+ANDROID 2 (GOOGLE DRIVE) OPTIMIZED : https://drive.google.com/file/d/11t6WMXywb7MT4UHCa_UAo43V6LNzMd6X/view?usp=sharing
+
+iOS : https://www.mediafire.com/file/ty7m3dc6ogyfhsb/BSDS_V42.ipa/file
 
 Server ZIP: https://github.com/CrazorTheCat/BSDS-V42/archive/refs/heads/master.zip
 
