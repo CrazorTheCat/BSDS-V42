@@ -1,4 +1,6 @@
 from Classes.Commands.Client.LogicPurchaseOfferCommand import LogicPurchaseOfferCommand
+from Classes.Commands.Client.LogicSetPlayerNameColorCommand import LogicSetPlayerNameColorCommand
+from Classes.Commands.Client.LogicSetPlayerThumbnailCommand import LogicSetPlayerThumbnailCommand
 from Classes.Commands.Server.LogicChangeAvatarNameCommand import LogicChangeAvatarNameCommand
 
 
@@ -31,7 +33,7 @@ class LogicCommandManager:
         500: 'LogicGatchaCommand',
         503: 'LogicClaimDailyRewardCommand',
         504: 'LogicSendAllianceMailCommand',
-        505: 'LogicSetPlayerThumbnailCommand',
+        505: LogicSetPlayerThumbnailCommand,
         506: 'LogicSelectSkinCommand',
         507: 'LogicUnlockSkinCommand',
         508: 'LogicChangeControlModeCommand',
@@ -50,7 +52,7 @@ class LogicCommandManager:
         524: 'LogicVideoStartedCommand',
         525: 'LogicSelectCharacterCommand',
         526: 'LogicUnlockFreeSkinsCommand',
-        527: 'LogicSetPlayerNameColorCommand',
+        527: LogicSetPlayerNameColorCommand,
         528: 'LogicViewInboxNotificationCommand',
         529: 'LogicSelectStarPowerCommand',
         530: 'LogicSetPlayerAgeCommand',
@@ -84,10 +86,10 @@ class LogicCommandManager:
     def createCommand(commandType, commandPayload=b''):
         commandList = LogicCommandManager.commandsList
         if LogicCommandManager.commandExist(commandType):
-            print(LogicCommandManager.getCommandsName(commandType), "created")
             if type(commandList[commandType]) == str:
-                pass
+                print(commandType, ":", LogicCommandManager.getCommandsName(commandType), "skipped")
             else:
+                print(commandType, ":", LogicCommandManager.getCommandsName(commandType), "created")
                 return commandList[commandType](commandPayload)
         else:
             print(commandType, "skipped")

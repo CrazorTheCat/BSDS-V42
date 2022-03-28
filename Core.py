@@ -1,4 +1,5 @@
 import os
+import Configuration
 from Classes.ServerConnection import ServerConnection
 from Static.StaticData import StaticData
 
