@@ -1,0 +1,29 @@
+{
+  "Offers": [
+    {
+      "RewardsCount": 1,
+      "Rewards": [
+        {
+          "ItemType": 4,
+          "Amount": 0,
+          "CsvID1": 0,
+          "CsvID2": 0,
+          "SkinID": 436
+        }
+      ],
+      "Currency": 3,
+      "Cost": 25000,
+      "Time": 461036,
+      "Claim": false,
+      "DailyOffer": false,
+      "OldPrice": 0,
+      "Text": "None",
+      "Background": "None",
+      "Processed": false,
+      "TypeBenefit": 0,
+      "Benefit": 0,
+      "OneTimeOffer": false,
+      "Claimed": false
+    }
+  ]
+}

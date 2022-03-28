@@ -2,7 +2,7 @@ import time
 
 from Classes.ByteStreamHelper import ByteStreamHelper
 from Classes.Packets.PiranhaMessage import PiranhaMessage
-
+from Static.StaticData import StaticData
 
 class OwnHomeDataMessage(PiranhaMessage):
     def __init__(self, messageData):
@@ -81,13 +81,52 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeVInt(0)  # Change Name Cost
         self.writeVInt(0)  # Timer For the Next Name Change
 
-        self.writeVInt(1) # Offers count
+        '''
+        0: FREE BOX
+        1: COINS
+        2: RANDOM BRAWLER RARITY
+        3: BRAWLER
+        4: SKIN
+        5: ?
+        6: BRAWL BOX
+        7: TICKETS
+        8: POWER POINTS
+        9: TOKEN DOUBLER
+        10: MEGA BOX
+        11: ?
+        12: POWER POINTS
+        13: NEW EVENT SLOT
+        14: BIG BOX
+        15: BRAWL BOX
+        16: GEMS
+        17: STAR POINTS
+        18: QUEST???
+        19: PIN
+        20: SET OF PINS
+        21: PIN PACK
+        22: PIN PACK FOR
+        23: PIN OF RARITY
+        24: ?
+        25: ?
+        26: ?
+        27: PIN PACK OF RARITY
+        28: ?
+        29: ?
+        30: NEW BRAWLER UPGRADED TO LEVEL
+        31: RANDOM BRAWLER OF RARITY UPGRADED TO LEVEL
+        32: GEAR TOKENS
+        33: SCRAP
+        '''
+
+        ShopData = StaticData.ShopData
+
+        self.writeVInt(1 + len(ShopData["Offers"])) # Offers count
 
         self.writeVInt(1)  # RewardCount
         for i in range(1):
-            self.writeVInt(6)  # ItemType
+            self.writeVInt(6) # ItemType
             self.writeVInt(0)
-            self.writeDataReference(0)  # CsvID
+            self.writeDataReference(0) # CsvID
             self.writeVInt(0)
 
         self.writeVInt(0)
@@ -112,6 +151,45 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeBoolean(False)
         self.writeBoolean(False)
 
+        for i in ShopData["Offers"]:
+            self.writeVInt(i["RewardsCount"])  # RewardCount
+            for reward in i["Rewards"]:
+                self.writeVInt(reward["ItemType"]) # ItemType
+                self.writeVInt(reward["Amount"])
+                if reward["CsvID1"] != 0:
+                    self.writeDataReference(reward["CsvID1"], reward["CsvID2"]) # CsvID
+                else:
+                    self.writeDataReference(0)
+                self.writeVInt(reward["SkinID"])
+
+            self.writeVInt(i["Currency"])
+            self.writeVInt(i["Cost"])
+            self.writeVInt(i["Time"])
+            self.writeVInt(0) # ?
+            self.writeVInt(0)
+            self.writeBoolean(i["Claim"])
+            self.writeVInt(0) # ?
+            self.writeVInt(0)
+            self.writeBoolean(i["DailyOffer"])
+            self.writeVInt(i["OldPrice"])
+            self.writeInt(0)
+            if i["Text"] == "None":
+                self.writeString()
+            else:
+                self.writeString(i["Text"])
+            self.writeBoolean(False)
+            if i["Background"] == "None":
+                self.writeString()
+            else:
+                self.writeString(i["Background"])
+            self.writeVInt(-1)
+            self.writeBoolean(i["Processed"])
+            self.writeVInt(i["TypeBenefit"])
+            self.writeVInt(i["Benefit"])
+            self.writeString()
+            self.writeBoolean(i["OneTimeOffer"])
+            self.writeBoolean(i["Claimed"])
+
         self.writeVInt(player.Tokens)
         self.writeVInt(-1)
 
@@ -127,25 +205,26 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeString(player.Region)
         self.writeString(player.ContentCreator)
 
-        self.writeVInt(19)
+        self.writeVInt(20)
         self.writeLong(2, 1)  # Unknown
-        self.writeLong(3, 0)  # TokensGained
-        self.writeLong(4, 0)  # TrophiesGained
-        self.writeLong(6, 0)  # DemoAccount
-        self.writeLong(7, 0)  # InvitesBlocked
-        self.writeLong(8, 0)  # StarPointsGained
-        self.writeLong(9, 1)  # ShowStarPoints
-        self.writeLong(10, 0)  # PowerPlayTrophiesGained
+        self.writeLong(3, 0)  # Tokens Gained
+        self.writeLong(4, 0)  # Trophies Gained
+        self.writeLong(6, 0)  # Demo Account
+        self.writeLong(7, 0)  # Invites Blocked
+        self.writeLong(8, 0)  # Star Points Gained
+        self.writeLong(9, 1)  # Show Star Points
+        self.writeLong(10, 0)  # Power Play Trophies Gained
         self.writeLong(12, 1)  # Unknown
-        self.writeLong(14, 0)  # CoinsGained
+        self.writeLong(14, 0)  # Coins Gained
         self.writeLong(15, 0)  # AgeScreen | 3 = underage (disable social media) | 1 = age popup
         self.writeLong(16, 1)
-        self.writeLong(17, 0)  # TeamChatMuted
-        self.writeLong(18, 1)  # EsportButton
-        self.writeLong(19, 0)  # ChampionShipLivesBuyPopup
-        self.writeLong(20, 0)  # GemsGained
-        self.writeLong(21, 0)  # LookingForTeamState
+        self.writeLong(17, 0)  # Team Chat Muted
+        self.writeLong(18, 1)  # Esport Button
+        self.writeLong(19, 0)  # Champion Ship Lives Buy Popup
+        self.writeLong(20, 0)  # Gems Gained
+        self.writeLong(21, 0)  # Looking For Team State
         self.writeLong(22, 1)
+        self.writeLong(23, 1)  # Club Trophies Gained
         self.writeLong(24, 1)  # Have already watched club league stupid animation
 
         self.writeVInt(0)
