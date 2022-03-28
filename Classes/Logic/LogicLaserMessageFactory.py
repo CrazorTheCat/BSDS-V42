@@ -2,11 +2,14 @@ from Classes.Packets.Client.Authentification.ClientHelloMessage import ClientHel
 from Classes.Packets.Client.Authentification.LoginMessage import LoginMessage
 from Classes.Packets.Client.Battle.AskForBattleEndMessage import AskForBattleEndMessage
 from Classes.Packets.Client.Home.ChangeAvatarNameMessage import ChangeAvatarNameMessage
+from Classes.Packets.Client.Home.AvatarNameCheckRequestMessage import AvatarNameCheckRequestMessage
 from Classes.Packets.Client.Home.EndClientTurnMessage import EndClientTurnMessage
 from Classes.Packets.Client.Home.GoHomeFromOfflinePractiseMessage import GoHomeFromOfflinePractiseMessage
 from Classes.Packets.Client.Home.GoHomeMessage import GoHomeMessage
 from Classes.Packets.Client.Socket.KeepAliveMessage import KeepAliveMessage
 from Classes.Packets.Client.Home.GetPlayerProfileMessage import GetPlayerProfileMessage
+from Classes.Packets.Client.Home.PlayerStatusMessage import PlayerStatusMessage
+
 from Classes.Packets.Server.Authentification.LoginFailedMessage import LoginFailedMessage
 from Classes.Packets.Server.Authentification.LoginOkMessage import LoginOkMessage
 from Classes.Packets.Server.Authentification.OutOfSyncMessage import OutOfSyncMessage
@@ -17,6 +20,7 @@ from Classes.Packets.Server.Home.LobbyInfoMessage import LobbyInfoMessage
 from Classes.Packets.Server.Home.OwnHomeDataMessage import OwnHomeDataMessage
 from Classes.Packets.Server.Socket.KeepAliveServerMessage import KeepAliveServerMessage
 from Classes.Packets.Server.Home.PlayerProfileMessage import PlayerProfileMessage
+from Classes.Packets.Server.Home.AvatarNameCheckResponseMessage import AvatarNameCheckResponseMessage
 
 
 class LogicLaserMessageFactory:
@@ -154,7 +158,7 @@ class LogicLaserMessageFactory:
         14363: 'TeamSetLocationMessage',
         14364: 'TeamReportChatMessage',
         14365: 'TeamInviteMessage',
-        14366: 'PlayerStatusMessage',
+        14366: PlayerStatusMessage,
         14367: 'TeamClearInviteMessage',
         14368: 'TeamInviteResponseMessage',
         14369: 'TeamPremadeChatMessage',
@@ -168,7 +172,7 @@ class LogicLaserMessageFactory:
         14418: 'RemoveAvatarStreamEntryMessage',
         14469: 'AlliancePremadeChatMessage',
         14479: 'TeamInvitationResponseMessage',
-        14600: 'AvatarNameCheckRequestMessage',
+        14600: AvatarNameCheckRequestMessage,
         14700: 'ListBrawlTvChannelsMessage',
         14701: 'TuneBrawlTvChannelMessage',
         14715: 'SendGlobalChatLineMessage',
@@ -223,7 +227,7 @@ class LogicLaserMessageFactory:
         20205: 'AvatarNameChangeFailedMessage',
         20206: 'AvatarOnlineStatusUpdated',
         20207: 'AllianceOnlineStatusUpdatedMessage',
-        20300: 'AvatarNameCheckResponseMessage',
+        20300: AvatarNameCheckResponseMessage,
         20402: 'CreateGameFailedMessage',
         20405: 'MatchMakingStatusMessage',
         20406: 'MatchMakingCancelledMessage',
@@ -371,9 +375,9 @@ class LogicLaserMessageFactory:
         messagesList = LogicLaserMessageFactory.messagesList
         if LogicLaserMessageFactory.messageExist(messageType):
             if type(messagesList[messageType]) == str:
-                print(LogicLaserMessageFactory.getMessageName(messageType), "skipped")
+                print(messageType, ":", LogicLaserMessageFactory.getMessageName(messageType), "skipped", messagePayload)
             else:
-                print(LogicLaserMessageFactory.getMessageName(messageType), "created")
+                print(messageType, ":", LogicLaserMessageFactory.getMessageName(messageType), "created")
                 return messagesList[messageType](messagePayload)
         else:
             print(messageType, "skipped")
