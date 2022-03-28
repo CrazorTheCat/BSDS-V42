@@ -224,7 +224,7 @@ class OwnHomeDataMessage(PiranhaMessage):
         self.writeLong(20, 0)  # Gems Gained
         self.writeLong(21, 0)  # Looking For Team State
         self.writeLong(22, 1)
-        self.writeLong(23, 1)  # Club Trophies Gained
+        self.writeLong(23, 0)  # Club Trophies Gained
         self.writeLong(24, 1)  # Have already watched club league stupid animation
 
         self.writeVInt(0)
