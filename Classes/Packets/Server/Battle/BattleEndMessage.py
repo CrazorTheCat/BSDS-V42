@@ -103,8 +103,6 @@ class BattleEndMessage(PiranhaMessage):
         self.writeVInt(-1)
         self.writeBoolean(False)
 
-        print(self.messagePayload.hex())
-
     def decode(self):
         fields = {}
         return {}
