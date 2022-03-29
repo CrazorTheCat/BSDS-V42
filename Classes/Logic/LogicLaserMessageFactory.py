@@ -8,7 +8,6 @@ from Classes.Packets.Client.Home.GoHomeFromOfflinePractiseMessage import GoHomeF
 from Classes.Packets.Client.Home.GoHomeMessage import GoHomeMessage
 from Classes.Packets.Client.Socket.KeepAliveMessage import KeepAliveMessage
 from Classes.Packets.Client.Home.GetPlayerProfileMessage import GetPlayerProfileMessage
-from Classes.Packets.Client.Home.PlayerStatusMessage import PlayerStatusMessage
 
 from Classes.Packets.Server.Authentification.LoginFailedMessage import LoginFailedMessage
 from Classes.Packets.Server.Authentification.LoginOkMessage import LoginOkMessage
@@ -158,7 +157,7 @@ class LogicLaserMessageFactory:
         14363: 'TeamSetLocationMessage',
         14364: 'TeamReportChatMessage',
         14365: 'TeamInviteMessage',
-        14366: PlayerStatusMessage,
+        14366: 'PlayerStatusMessage',
         14367: 'TeamClearInviteMessage',
         14368: 'TeamInviteResponseMessage',
         14369: 'TeamPremadeChatMessage',
