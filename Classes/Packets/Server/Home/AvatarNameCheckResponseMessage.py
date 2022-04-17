@@ -1,6 +1,5 @@
 from Classes.ClientsManager import ClientsManager
 from Classes.Packets.PiranhaMessage import PiranhaMessage
-import psutil
 
 
 class AvatarNameCheckResponseMessage(PiranhaMessage):
